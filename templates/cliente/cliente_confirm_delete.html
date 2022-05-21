@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apagar Cliente</title>
+</head>
+<body>
+    <h4>Tem certeza que deseja apagar o cliente '{{object.nome}}' ?</h4>
+
+    <form action="." method="post">
+        {% csrf_token %}
+
+        <input type="submit" value="Sim, tenho certeza!">
+        <input type="reset" onclick="location.href='{% url 'loja_app:cliente' %}'" value="Não desejo apagar">
+    </form>
+</body>
+</html>
